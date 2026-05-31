@@ -179,14 +179,23 @@ st.metric(
     round(predicted_car,2)
 )
 
+signal_text = {
+    "高穩健訊號": "高穩健訊號：歷史資料顯示，該事件類型在此窗口中與市場反應具有明確且穩定的關聯，適合企業作為事件溝通與風險管理的重要參考。",
+    "明確市場訊號": "明確市場訊號：模型顯示，該事件類型在此窗口中具有可辨識的市場反應，建議企業在公告與投資人溝通時主動管理市場預期。",
+    "初步市場訊號": "初步市場訊號：模型顯示該事件類型在此窗口中呈現一定方向性的市場反應，可作為情境判斷與溝通策略設計的參考。",
+    "參考行訊號": "模型尚未顯示該事件類型在此窗口中具有穩定市場訊號，但仍可作為情境模擬與內部決策討論的輔助資訊。"
+}
+
+text = signal_text.get(signal, f"參考行訊號: {signal}")
+
 if signal == "高穩健訊號":
-    st.success(f"市場訊號強度：{signal}")
+    st.success(text)
 
 elif signal == "明確市場訊號":
-    st.info(f"市場訊號強度：{signal}")
+    st.info(text)
 
 elif signal == "初步市場訊號":
-    st.warning(f"市場訊號強度：{signal}")
+    st.warning(text)
 
 else:
     st.markdown(
@@ -199,7 +208,7 @@ else:
             border: 1px solid #d0d0d0;
             font-weight: 500;
         ">
-            市場訊號強度：{signal}
+            參考行訊號: {signal}
         </div>
         """,
         unsafe_allow_html=True
