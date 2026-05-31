@@ -203,6 +203,7 @@ else:
         </div>
         """,
         unsafe_allow_html=True
+    )
 
 # Plotly 圖表
 fig = go.Figure(
