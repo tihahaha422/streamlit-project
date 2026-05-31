@@ -189,7 +189,20 @@ elif signal == "初步市場訊號":
     st.warning(f"市場訊號強度：{signal}")
 
 else:
-    st.error(f"市場訊號強度：{signal}")
+    st.markdown(
+        f"""
+        <div style="
+            padding: 10px 12px;
+            border-radius: 8px;
+            background-color: #f2f2f2;
+            color: #444;
+            border: 1px solid #d0d0d0;
+            font-weight: 500;
+        ">
+            市場訊號強度：{signal}
+        </div>
+        """,
+        unsafe_allow_html=True
 
 # Plotly 圖表
 fig = go.Figure(
