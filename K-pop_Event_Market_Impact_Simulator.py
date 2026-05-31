@@ -81,7 +81,7 @@ event_options = {
 
 event_type = st.selectbox(
     "事件類型",
-    options=list(event_labels.keys()),
+    options=list(event_options.keys()),
     format_func=lambda x: event_labels[x]
 )
 
