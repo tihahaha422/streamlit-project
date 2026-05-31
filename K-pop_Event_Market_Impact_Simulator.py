@@ -186,7 +186,10 @@ signal_text = {
     "參考行訊號": "模型尚未顯示該事件類型在此窗口中具有穩定市場訊號，但仍可作為情境模擬與內部決策討論的輔助資訊。"
 }
 
-text = signal_text.get(signal, f"參考行訊號: {signal}")
+text = signal_text.get(
+    signal,
+    f"{signal}: 無對應說明"
+)
 
 if signal == "高穩健訊號":
     st.success(text)
@@ -208,7 +211,7 @@ else:
             border: 1px solid #d0d0d0;
             font-weight: 500;
         ">
-            參考行訊號: {signal}
+            {text}
         </div>
         """,
         unsafe_allow_html=True
