@@ -68,7 +68,7 @@ youtube_subs = st.number_input(
 )
 
 # 事件類型選擇
-event_options = [
+event_options = {
     "positive_activity": "正面活動事件",
     "positive_comeback": "正面回歸事件",
     "positive_concert": "正面演唱會事件",
@@ -77,7 +77,7 @@ event_options = [
     "negative_contract_crisis": "負面合約危機事件",
     "dating": "戀情／私生活事件",
     "artist_transition": "藝人轉換事件"
-]
+}
 
 event_type = st.selectbox(
     "事件類型",
@@ -85,7 +85,7 @@ event_type = st.selectbox(
 )
 
 # 窗口選擇
-window_options = [
+window_options = {
     "AR[0]": "事件日即時反應｜衡量事件公布當天的市場反應",
     "CAR[-1,+1]": "標準短期反應｜捕捉事件日前後三個交易日的核心反應",
     "CAR[0,+1]": "公告後短期反應｜衡量事件日與隔日的市場消化",
@@ -93,7 +93,7 @@ window_options = [
     "CAR[0,+5]": "事件後一週反應｜衡量事件公布後一週內的累積市場反應",
     "CAR[-5,+5]": "寬窗口事件反應｜捕捉事件前後較完整的累積變化",
     "CAR[-10,+10]": "完整事件期趨勢｜用於觀察較長事件期內的整體市場走勢"
-]
+}
 
 window = st.selectbox(
     "事件窗口",
