@@ -82,7 +82,7 @@ event_options = {
 event_type = st.selectbox(
     "事件類型",
     options=list(event_options.keys()),
-    format_func=lambda x: event_labels[x]
+    format_func=lambda x: event_options[x]
 )
 
 # 窗口選擇
@@ -98,8 +98,8 @@ window_options = {
 
 window = st.selectbox(
     "事件窗口",
-    options=list(window_labels.keys()),
-    format_func=lambda x: window_labels[x]
+    options=list(window_options.keys()),
+    format_func=lambda x: window_options[x]
 )
 
 # 計算中心化數值
